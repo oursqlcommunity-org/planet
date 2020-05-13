@@ -3,6 +3,10 @@
 This repository contains the configuration required to generate the contents of
 [Planet for the MySQL Community](http://planet-beta-pluto.oursqlcommunity.org/).
 
+The current version of this file can be found in (1).
+
+(1): https://github.com/oursqlcommunity-org/planet/blob/master/README.md
+
 ## Software
 
 The system is built using the
