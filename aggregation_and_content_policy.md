@@ -15,7 +15,8 @@ current version of the document can be found in (1).
 
 (1): https://github.com/oursqlcommunity-org/planet/blob/master/aggregation_and_content_policy.md
 
-The configuration file containing currently aggregated feeds is ...TBC....
+The configuration file containing currently aggregated feeds is
+[planet.ini](https://github.com/oursqlcommunity-org/planet/blob/master/planet.ini).
 
 
 ## Author Availability Policy
@@ -76,7 +77,9 @@ providing:
 
 Alternatively, for quicker processing, you can create a
 [Pull Request](https://github.com/oursqlcommunity-org/planet/pulls)
-containing the relevant changes to the ...TBD... configuration file.
+containing the relevant changes to the
+[planet.ini](https://github.com/oursqlcommunity-org/planet/blob/master/planet.ini)
+file.
 
 If you have a good reason for not creating an issue, you can send an email at
 planet AT oursqlcommunity DOT org.  In your email, please explain why you did
