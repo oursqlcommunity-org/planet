@@ -36,13 +36,13 @@ of Planet for the MySQL Community can be found in the template directory of
 this repository.
 
 This template was bootstrapped with the
-[OpenStreetMap](https://github.com/gravitystorm/blogs.osm.org/tree/700ff57d4b6fb8b821f5baee2799f4eeaacb95cc)
-(*OSM*) template, which was started by taking the
+[OpenStreetMap Blogs](https://github.com/gravitystorm/blogs.osm.org/tree/700ff57d4b6fb8b821f5baee2799f4eeaacb95cc)
+(*OSMB*) template, which was started by taking the
 [planet-blank template](https://github.com/planet-templates/planet-blank)
 and enriched with the
 [planet-feeds template](https://github.com/planet-templates/planet-feeds).
 
-The OSM template was then modified to fit the
+The OSMB template was then modified to fit the
 [Planet for MySQL Community Requirements](https://jfg-mysql.blogspot.com/2020/05/planet-mysql-community-requirements-rfc.html).
 
 ## Static Files Generation How-to
