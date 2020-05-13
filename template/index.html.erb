@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name='generator' content='<%= Pluto.generator %> - http://feedreader.github.io/'>
+
+  <title><%= site.title %></title>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom feed" href="atom.xml" />
+  <!-- We do one thing well (Atom), we do not advertise RSS.
+    -- Note that the RSS feed might not validate in Feed Validator.
+    -- If using the RSS feed, read the comment the header of its source.
+    -- <link rel="alternate" type="application/rss+xml" title="RSS feed" href="rss20.xml" /> -->
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <%= stylesheet_link_tag 'css/font-awesome' %>
+  <%= stylesheet_link_tag 'css/blank' %>
+
+  <script src='js/jquery-2.0.3.min.js'></script>
+  <script src='js/blank.js'></script>
+</head>
+<body>
+
+<div id='navwrap'>
+<div id='nav'>
+  <br>
+  <center><a href="https://aws.amazon.com/what-is-cloud-computing"><img src="https://d0.awsstatic.com/logos/powered-by-aws.png" alt="Powered by AWS Cloud Computing"></a></center> 
+
+  <p>Last Update:</p>
+  <p class='small'><%= site.updated.to_datetime.rfc3339 if site.updated %></p>
+
+  <p><i class='icon-rss-sign'></i> <%= link_to "Atom feed", "atom.xml" %></p>
+  <!-- <p><i class='icon-rss-sign'></i> <%= link_to "RSS 2.0 feed", "rss20.xml" %></p> -->
+
+  <p>Meta:</p>
+  <ul class='metas small'>
+    <li><%= link_to "Abuse procedure", "https://github.com/oursqlcommunity-org/planet/blob/master/aggregation_and_content_policy.md" %></li>
+    <li><%= link_to "Aggregation and content policy", "https://github.com/oursqlcommunity-org/planet/blob/master/aggregation_and_content_policy.md" %></li>
+    <li><%= link_to "How to add/remove your feed", "https://github.com/oursqlcommunity-org/planet/blob/master/aggregation_and_content_policy.md" %></li>
+    <li>Maintained by Jean-François Gagné <%= link_to '', "http://twitter.com/@jfg956", :class => "icon-twitter" %></li>
+    <li>Helped by ...a team of people... TBC</li>
+    <li>Built with the <%= link_to "Pluto", "https://github.com/feedreader" %> Feed Reader</li>
+    <li><%= link_to "Font Awesome", "http://fontawesome.io" %> by Dave Gandy</li>
+    <li><%= link_to "Why yet another Planet MySQL?", "https://jfg-mysql.blogspot.com/2020/04/planning-for-after-planet-mysql-2.html" %></li>
+  </ul>
+
+  <p>Planetarium:</p>
+  <ul class='planetarium small'>
+    <li><%= link_to "Planet MySQL", "https://jfg-mysql.blogspot.com/2020/04/the-state-of-planet-mysql-unhealty.html" %></li>
+    <li><%= link_to "Planet MariaDB", "https://mariadb.org/planet-facelift/" %></li>
+    <!-- It looks like planet.mongodb.org was taken over by www.mongodb.com, so not listing it here as a Planet.
+    <li><%= link_to "Planet MongoDB", "https://planet.mongodb.org/" %></li> -->
+    <li><%= link_to "Planet PostgreSQL", "https://planet.postgresql.org/" %></li>
+  </ul>
+  <ul class='metas small'>
+    <li>(open <%= link_to "issue", "https://github.com/oursqlcommunity-org/planet/issues" %> for adding a data-related Planet)</li>
+  </ul>
+
+  <p>Subscriptions:</p>
+  <ul class='subscriptions small' >
+    <li><hr class='item-separator'></li>
+    <!-- TODO: add separator between type of feeds (agg, aso, com, perso, ...). -->
+<% site.feeds.each do |feed| %>
+    <li>
+      <%= link_to '',  feed.feed_url, :class => "icon-rss-sign" %>
+      <%= link_to feed.title, feed.url %>
+      <%= link_to '', "https://twitter.com/#{feed.twitter}", :class => "icon-twitter" if feed.twitter %>
+    </li>
+<% end %>
+    <li><hr class='item-separator'></li>
+   </ul>
+</div>
+</div>
+
+<div id='opts'>
+  <div style='width: 100%; text-align: right;'>
+   <img src='image/view-headlines.png' id='show-headlines' title='Show Headlines Only' width='24' height='24'>
+   <img src='image/view-snippets.png'  id='show-snippets'  title='Show Snippets'       width='24' height='24'>
+  </div>
+</div>
+
+<h1 style='margin: 0px 0px 0px 0px'><%= site.title %></h1>
+<h3 style='margin: 0px 0px 0px 0px'>A blog aggregator for the MySQL Community/Ecosystem</h3>
+
+<p>This website is in beta. A description of what it tries to achieve is in the
+<%= link_to "Planet MySQL Community - Requirements RFC", "https://jfg-mysql.blogspot.com/2020/05/planet-mysql-community-requirements-rfc.html" %>.
+</p>
+
+<p class='small'>And a clarification about the MySQL Community/Ecosystem:
+it is not limited the users of the MySQL Database.  In the current context,
+it also includes people interested in MySQL Variants including MariaDB
+Server, Percona Server, Galera, Amazon RDS and Aurora, Google Cloud SQL
+for MySQL, and Azure and Alibaba flavor(s) of MySQL/MariaDB/Percona
+Servers.</p>
+
+<div id="articles">
+<%
+   items = site.items.latest.limit(100)
+   ItemCursor.new( items ).each do |item, new_date, new_feed|
+%>
+
+<% if new_date %>
+  <h2 class='new-date'><%= item.updated.strftime('%A, %d. %B %Y') %></h2>
+<% else %>
+  <hr class='item-separator'>
+<% end %>
+
+  <article class='item'>
+
+    <h3 class='item-title'>
+      <i class='icon-caret-down item-collapse item-close item-opened'></i>
+      <i class='icon-caret-right item-expand item-open item-closed'></i>
+      <%= link_to item.title, item.url %>
+      <sup><small>(from <%= link_to item.feed.title, item.feed.url %>)</small></sup>
+    </h3>
+
+    <div class='item-body'>
+      <div class='item-snippet'>
+<% if item.summary # gsub below because textify does not always strip all html coding. %>
+        <%= textify( item.summary ).gsub("<", "").gsub(">", "")[0..400] %>
+<% elsif item.content %>
+        <%= textify( item.content ).gsub("<", "").gsub(">", "")[0..400] %>
+<%   else %>
+        -/-
+<% end %>
+        [...]
+      </div>
+
+      <div class='item-footer'>
+        Published <%= item.published.strftime('%A, %d. %B %Y %H:%M') %> &bull;
+                  <%= time_ago_in_words( item.published ) %>
+<% if item.updated != item.published %>
+        &vert; Updated <%= item.updated.strftime('%A, %d. %B %Y %H:%M') %> &bull;
+                <%= time_ago_in_words( item.updated ) %>
+<% end %>
+      </div>
+
+    </div>
+  </article>
+<% end %>
+
+</div>
+</body>
+</html>

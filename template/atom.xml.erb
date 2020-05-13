@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!-- Useful documentation: https://validator.w3.org/feed/docs/atom.html -->
+<!-- Useful tools: http://www.feedvalidator.org/ & https://validator.w3.org/ -->
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id><%= site.url %></id>
+  <title><%= site.title %></title>
+  <updated><%= site.updated.to_datetime.rfc3339 if site.updated %></updated>
+  <link rel="self" href="<%= site.url %>atom.xml"/>
+  <link href="<%= site.url %>"/>
+  <generator uri="http://feedreader.github.io/"><%= Pluto.generator %></generator>
+  <subtitle>A blog aggregator for the MySQL Community / Ecosystem</subtitle>
+
+<%
+   items = site.items.latest.limit(100)
+   ItemCursor.new( items ).each do |item, new_date, new_feed|
+%>
+  <entry>
+    <title type="html"><%= CGI.escapeHTML(item.title) %></title>
+    <link href="<%= CGI.escapeHTML(item.url) %>"/>
+    <id><%= CGI.escapeHTML(item.url) %></id>
+    <updated><%= item.updated.to_datetime.rfc3339 %></updated>
+    <content type="html"><% if item.summary %>
+      <%= CGI.escapeHTML( textify( item.summary )[0..400] ) %>
+    <% elsif item.content %>
+      <%= CGI.escapeHTML( textify( item.content )[0..400] ) %>
+    <% end %></content>
+    <author>
+      <name><%= CGI.escapeHTML(item.feed.title) %></name>
+      <uri><%= CGI.escapeHTML(item.feed.url) %></uri>
+    </author>
+  </entry>
+<% end %>
+
+</feed>

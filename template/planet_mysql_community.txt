@@ -1,0 +1,23 @@
+# pakman manifest
+
+index.html  index.html.erb
+atom.xml    atom.xml.erb
+rss20.xml   rss.xml.erb
+robots.txt  robots.txt.erb
+
+css/blank.css
+css/font-awesome.css
+
+image/view-headlines.png
+image/view-snippets.png
+
+js/jquery-2.0.3.min.js
+js/blank.js
+
+font/fontawesome-webfont.eot
+font/fontawesome-webfont.svg
+font/fontawesome-webfont.ttf
+font/fontawesome-webfont.woff
+font/FontAwesome.otf
+
+favicon.ico

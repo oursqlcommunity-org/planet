@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<!-- Useful documentation: https://validator.w3.org/feed/docs/rss2.html -->
+<!-- Useful tools: http://www.feedvalidator.org/ & https://validator.w3.org/ -->
+
+<!-- Note: this feed did not validate in Feed Validator on creation.  It is not
+     exposed on <%= site.title %> either (atom is the prefered format).  If
+     you are reading this, I am curious in your intertest in this feed, please
+     send me a mail at webMaster below. -->
+
+<channel>
+  <title><%= site.title %></title>
+  <link><%= site.url %></link>
+  <description>A blog aggregator for the MySQL Community / Ecosystem</description>
+  <webMaster>planet@oursqlcommunity.org (Jean-Francois Gagne)</webMaster>
+  <lastBuildDate><%= site.updated.rfc822 if site.updated %></lastBuildDate>
+  <generator><%= Pluto.generator %> - http://feedreader.github.io/</generator>
+  <atom:link href="<%= site.url %>atom.xml" rel="self" type="application/atom+xml" />
+
+<%
+   items = site.items.latest.limit(100)
+   ItemCursor.new( items ).each do |item, new_date, new_feed|
+%>
+<item>
+  <title><%= CGI.escapeHTML(item.title) %></title>
+  <link><%= CGI.escapeHTML(item.url) %></link>
+  <description><% if item.summary %>
+      <%= CGI.escapeHTML( textify( item.summary )[0..400] ) %>
+    <% elsif item.content %>
+      <%= CGI.escapeHTML( textify( item.content )[0..400] ) %>
+  <% end %></description>
+  <guid><%= CGI.escapeHTML(item.url) %></guid>
+  <pubDate><%= item.updated.rfc822 %></pubDate>
+  <dc:creator><%= CGI.escapeHTML(item.feed.title) %></dc:creator>
+</item>
+<% end %>
+
+</channel>
+</rss>
