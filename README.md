@@ -14,13 +14,7 @@ Feed Reader and (Static) Website Generator.
 ### Planet Pluto Software
 
 As this system is built using the Planet Pluto Software, it needs to be
-installed first.  You can find the commands for installing it on Debian 10
-below.
-
-```
-sudo apt-get -y install ruby-full build-essential libsqlite3-dev
-sudo gem install pluto
-```
+installed first.
 
 ### A Web Server
 
@@ -47,7 +41,12 @@ The OSMB template was then modified to fit the
 
 ## Static Files Generation How-to
 
-0. Install Planet Pluto.
+0. Install Planet Pluto, below commands are doing that for Debian 10.
+
+```
+sudo apt-get -y install ruby-full build-essential libsqlite3-dev
+sudo gem install pluto
+```
 
 1. Clone this repository.
 
