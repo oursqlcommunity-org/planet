@@ -22,6 +22,10 @@ Planet Pluto only generates static web pages.  For serving these you need a web
 server.  Explaining how to install and configure a web server is out of scope
 of this README, you will need to Google it.
 
+The Nginx configuration currently used can be found in (2).
+
+(2): https://github.com/oursqlcommunity-org/planet/blob/master/etc/nginx/sites-available/planet-beta-pluto
+
 
 ## A Planet Pluto Template
 
