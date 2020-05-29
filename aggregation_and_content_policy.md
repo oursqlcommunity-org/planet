@@ -1,7 +1,7 @@
 # Aggregation and Content Policy
 
 If there is a problem with content on Planet for the MySQL Community, please
-try solving it directly with the author (there should be a link to his Twitter
+try solving it directly with the author (there should be a link to their Twitter
 profile in the subscription list, or there is probably a way to comment on
 the problematic post).  If it fails, or if it is a kind of problem that cannot
 be solved with a discussion, open an
