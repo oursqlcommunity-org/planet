@@ -1,7 +1,7 @@
 # Blogs Aggregator (Planet) for the MySQL Community
 
 This repository contains the configuration required to generate the contents of
-[Planet for the MySQL Community](http://planet-beta-pluto.oursqlcommunity.org/).
+[Planet for the MySQL Community](https://planet-beta-pluto.oursqlcommunity.org/).
 
 The current version of this file can be found in (1).
 
