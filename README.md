@@ -58,6 +58,10 @@ sudo gem install pluto
 
 1. Clone this repository.
 
+```
+git clone https://github.com/oursqlcommunity-org/planet.git
+```
+
 2. In the directory of the clonned repository, run below command to build the
 `planet_mysql_community` template with output in the `html` directory.
 
