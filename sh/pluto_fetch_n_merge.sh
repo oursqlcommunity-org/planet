@@ -16,7 +16,9 @@ cd $1
 cd $2
 cd $1
 
-log_file="$3/pluto_$(date +%F_%H-%M-%S).log"
+date_val="$(date +%F_%H-%M-%S)"
+log_file="$3/pluto_${date_val}.log"
+err_file="$3/pluto_${date_val}.err"
 
 # Test that we can create log file.
 touch $log_file
@@ -25,16 +27,16 @@ touch $log_file
 
 epoch_start="$(date +%s)"
 
-echo "$(date) - running pluto update." >> $log_file
-pluto update >> $log_file
-echo >> $log_file
+echo "$(date) - running pluto update." >> $log_file 2>> $err_file
+pluto update >> $log_file 2>> $err_file
+echo >> $log_file 2>> $err_file
 
-echo "$(date) - running pluto merge." >> $log_file
-pluto merge -t $4 -o $2 >> $log_file
-echo >> $log_file
+echo "$(date) - running pluto merge." >> $log_file 2>> $err_file
+pluto merge -t $4 -o $2 >> $log_file 2>> $err_file
+echo >> $log_file 2>> $err_file
 
 epoch_end="$(date +%s)"
 
-echo "$(date) - done in $(($epoch_end - $epoch_start)) seconds." >> $log_file
+echo "$(date) - done in $(($epoch_end - $epoch_start)) seconds." >> $log_file 2>> $err_file
 
 # EOF.
