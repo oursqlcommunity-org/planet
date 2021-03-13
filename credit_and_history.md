@@ -36,6 +36,7 @@ that boot-strapped the work on Planet for the MySQL Community, below is a list o
 to the censorship of Planet MySQL.
 
 * [About Planet MySQL](https://federico-razzoli.com/about-planet-mysql) by Federico Razzoli
+* [Planet MariaDB underwent liberal facelift](https://mariadb.org/planet-facelift/)
 * [Valerii Kravchuk](https://twitter.com/mysqlbugs) is [also being filtered](https://twitter.com/mysqlbugs/status/1216683283662168064)
 * [Planet MySQL Community: Requirements RFC](https://jfg-mysql.blogspot.com/2020/05/planet-mysql-community-requirements-rfc.html)
 * [Planet\[for the\] MySQL Community: Pluto Beta](https://jfg-mysql.blogspot.com/2020/05/planet-for-the-mysql-community-pluto-beta.html)
