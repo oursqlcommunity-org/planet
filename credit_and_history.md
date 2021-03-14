@@ -12,7 +12,7 @@ This project is the result of many discussions with different people, including 
 in the [MySQL Community](https://lefred.be/mysql-community-on-slack/) Slack.  It would
 not be possible to acknowledge all contributors to these but I will mention a few.
 
-Thanks to Shlomi Noach for having initiated the revolution that lead to the creration
+Thanks to Shlomi Noach for having initiated the revolution that led to the creation
 of Planet for the MySQL Community by publishing the blog post
 [Pulling this blog out of Planet MySQL aggregator, over community concerns](http://code.openark.org/blog/mysql/pulling-this-blog-out-of-planet-mysql-aggregator-over-community-concerns).
 
