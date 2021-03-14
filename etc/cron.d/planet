@@ -2,4 +2,4 @@
 PATH=/usr/local/bin:/usr/sbin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Regenerate static files every 15 minutes.
-*/15 * * * * admin /git_trees/planet/sh/pluto_fetch_n_merge.sh /git_trees/planet /var/www/planet-beta-pluto ./log planet_mysql_community
+*/15 * * * * admin /git_trees/planet/sh/pluto_fetch_n_merge.sh /git_trees/planet /var/www/planet ./log planet_mysql_community
