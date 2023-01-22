@@ -28,7 +28,7 @@ of this README, you will need to Google it.
 
 The Nginx configuration currently used can be found in (2).
 
-(2): https://github.com/oursqlcommunity-org/planet/blob/master/etc/nginx/sites-available/planet-beta-pluto
+(2): https://github.com/oursqlcommunity-org/planet/blob/master/etc/nginx/sites-available/planet-http
 
 
 ## A Planet Pluto Template
