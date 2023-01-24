@@ -1,0 +1,17 @@
+server {
+  listen 443;
+  listen [::]:443;
+
+  ssl on;
+  ssl_certificate /etc/letsencrypt/live/planet.oursqlcommunity.org/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/planet.oursqlcommunity.org/privkey.pem;
+
+  root /var/www/planet;
+  index index.html;
+
+  server_name planet.oursqlcommunity.org;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+}
