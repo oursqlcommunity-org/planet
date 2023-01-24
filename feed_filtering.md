@@ -16,7 +16,7 @@ and to the non-aggregation of some blogs
 ([GitHub](https://github.com/oursqlcommunity-org/planet/issues/7),
 [Phpflow](https://github.com/oursqlcommunity-org/planet/issues/9) and 
 [Geeksww](https://github.com/oursqlcommunity-org/planet/issues/66)).
-Only relying on tagged feed turned-out to be non-satisfactory and it became clear that
+Only relying on tagged feed turned out to be non-satisfactory and it became clear that
 implementing some sort of filtering was needed.
 
 Implementing filtering was delayed as it was considered to be a non-trivial
@@ -24,7 +24,7 @@ change to
 [index.html.erb](https://github.com/oursqlcommunity-org/planet/blob/master/template/index.html.erb)
 and [atom.xml.erb](https://github.com/oursqlcommunity-org/planet/blob/master/template/atom.xml.erb).
 If someone wants to take a shot at this, pull request would be considered,
-but maybe create an issue first to avoid wasted time and effort.
+but maybe create an issue first to avoid wasting time and effort.
 
 Filtering was finally enabled by using an external service:
 [rss.app](https://rss.app/).  Some examples of filtered feeds are 
@@ -32,7 +32,7 @@ Filtering was finally enabled by using an external service:
 and [Percona](https://github.com/oursqlcommunity-org/planet/commit/7b6e80760854e27c4d6746c495433713ea8c0a94),
 and there are others.
 
-Filtring with rss.app is considered an experiment for now.  It currently
+Filtering with rss.app is considered an experiment for now.  It currently
 leads to good results, but its subscription-based model makes it something
 that we might want to replace, especially when we need more
 than 15 filtered feeds and have to upgrade from the [Basic to the Developper
