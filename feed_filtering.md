@@ -1,5 +1,9 @@
 # Feed Filtering
 
+The current version of the document can be found in (1).
+
+(1): https://github.com/oursqlcommunity-org/planet/blob/master/feed_filtering.md
+
 At the inception of Planet for the MySQL Community, no feed filtering was implemented.
 At the time, it was thought that it would be possible to keep a signal-to-noise ratio
 about MySQL and Variants content by using tagged feed.  This had limited success
