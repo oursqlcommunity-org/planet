@@ -47,9 +47,14 @@ SQL for MySQL, and Azure and Alibaba flavor(s) of MySQL/MariaDB/Percona Servers.
 - If your blog contains a mix of MySQL and non-MySQL content, please submit a
 category or tag feed instead of a default feed.
 
+- If it is not possible to submit a category or tag feed,
+[filtering your feed](https://github.com/oursqlcommunity-org/planet/blob/master/feed_filtering.md)
+on the aggregator side might be possible.
+
 - If the recent entries of a submitted feed contains a small amount of relevant
-content, it might be considered for removal.  Authors will be contacted before
-such removal occurs.
+content, it might be considered for
+[filtering](https://github.com/oursqlcommunity-org/planet/blob/master/feed_filtering.md).
+Authors will usually be contacted before filtering is implemented on their feed.
 
 
 ## Content Management
