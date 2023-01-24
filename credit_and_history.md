@@ -35,7 +35,7 @@ In addition to Shlomi Noach blog post
 that boot-strapped the work on Planet for the MySQL Community, below is a list of related complains / reactions
 to the censorship of Planet MySQL.
 
-* [About Planet MySQL](https://federico-razzoli.com/about-planet-mysql)
+* [About Planet MySQL (on Webarchive)](https://web.archive.org/web/20210120002548/https://federico-razzoli.com/about-planet-mysql)
 * [Community vs Ecosystem](https://linuxjedi.co.uk/2020/05/05/community-vs-ecosystem/)
 * [Planet MariaDB underwent liberal facelift](https://mariadb.org/planet-facelift/)
 * [Valerii Kravchuk](https://twitter.com/mysqlbugs) tweeted about [being filtered](https://twitter.com/mysqlbugs/status/1216683283662168064)
@@ -43,5 +43,6 @@ to the censorship of Planet MySQL.
 * [Planet MySQL Community: Requirements RFC](https://jfg-mysql.blogspot.com/2020/05/planet-mysql-community-requirements-rfc.html)
 * [Planet\[for the\] MySQL Community: Pluto Beta](https://jfg-mysql.blogspot.com/2020/05/planet-for-the-mysql-community-pluto-beta.html)
 * [Update on Planet for the MySQL Community (June 7, 2020)](https://jfg-mysql.blogspot.com/2020/06/update-on-planet-for-mysql-20200607.html)
+* [Planet for the MySQL Community Graduating from Beta](https://jfg-mysql.blogspot.com/2023/01/planet-for-mysql-community-graduation-from-beta.html)
 
 (Feel free to submit other relevant links via pull requests.)
