@@ -1,0 +1,12 @@
+server {
+  listen 443;
+  listen [::]:443;
+
+  ssl on;
+    ssl_certificate /etc/letsencrypt/live/planet-beta-pluto.oursqlcommunity.org-0001/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/planet-beta-pluto.oursqlcommunity.org-0001/privkey.pem; # managed by Certbot
+
+  server_name planet-beta-pluto.oursqlcommunity.org;
+
+  rewrite ^/(.*)$ https://planet.oursqlcommunity.org/$1 redirect;
+}
