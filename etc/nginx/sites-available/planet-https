@@ -3,8 +3,8 @@ server {
   listen [::]:443;
 
   ssl on;
-  ssl_certificate /etc/letsencrypt/live/planet.oursqlcommunity.org/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/planet.oursqlcommunity.org/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/planet.oursqlcommunity.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/planet.oursqlcommunity.org/privkey.pem; # managed by Certbot
 
   root /var/www/planet;
   index index.html;

@@ -8,5 +8,5 @@ server {
 
   server_name planet-beta-pluto.oursqlcommunity.org;
 
-  rewrite ^/(.*)$ https://planet.oursqlcommunity.org/$1 redirect;
+  return 301 https://planet.oursqlcommunity.org$request_uri;
 }
