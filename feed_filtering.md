@@ -37,3 +37,6 @@ leads to good results, but its subscription-based model makes it something
 that we might want to replace, especially when we need more
 than 15 filtered feeds and have to upgrade from the [Basic to the Developper
 subscription](https://rss.app/plans).
+
+Another experiment about filtering is [siftrss](https://siftrss.com/).  One
+feed part of this experiment is [RoseHosting Blog](https://github.com/oursqlcommunity-org/planet/commit/bfb7bc05fc4a5e23df7bf4f613d9ca7043f5f516).
