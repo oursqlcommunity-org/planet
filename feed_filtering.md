@@ -26,17 +26,22 @@ and [atom.xml.erb](https://github.com/oursqlcommunity-org/planet/blob/master/tem
 If someone wants to take a shot at this, pull request would be considered,
 but maybe create an issue first to avoid wasting time and effort.
 
-Filtering was finally enabled by using an external service:
-[rss.app](https://rss.app/).  Some examples of filtered feeds are 
+Filtering was finally enabled.
+
+It was first implemented by using an external service:
+[rss.app](https://rss.app/).  Examples of filtered feeds with rss.app are
 [Mydbaops](https://github.com/oursqlcommunity-org/planet/commit/79362749ad88b1f00fc9c3398d4ded0f36b2aac9)
-and [Percona](https://github.com/oursqlcommunity-org/planet/commit/7b6e80760854e27c4d6746c495433713ea8c0a94),
-and there are others.
+and [Percona](https://github.com/oursqlcommunity-org/planet/commit/7b6e80760854e27c4d6746c495433713ea8c0a94).
 
-Filtering with rss.app is considered an experiment for now.  It currently
-leads to good results, but its subscription-based model makes it something
-that we might want to replace, especially when we need more
-than 15 filtered feeds and have to upgrade from the [Basic to the Developper
-subscription](https://rss.app/plans).
+Filtering with rss.app is considered a failed experiment.  Its filtering,
+even though simple to use, leads to sub-optimal results.  It also costs too
+much (around 50% of the monthly costs), and would have cost more when filtering
+more than 15 feeds (because needing to upgrade from the [Basic to the Developper
+subscription](https://rss.app/plans)).
 
-Another experiment about filtering is [siftrss](https://siftrss.com/).  One
-feed part of this experiment is [RoseHosting Blog](https://github.com/oursqlcommunity-org/planet/commit/bfb7bc05fc4a5e23df7bf4f613d9ca7043f5f516).
+The currently used filtering solution is [siftrss](https://siftrss.com/).
+It is still considered an experiment, but so far is more successful than
+rss.app.  Examples of filtered feeds with siftrss are
+[RoseHosting Blog](https://github.com/oursqlcommunity-org/planet/commit/bfb7bc05fc4a5e23df7bf4f613d9ca7043f5f516),
+[AWS Database Blog](https://github.com/oursqlcommunity-org/planet/commit/106c6e59cc7facc01e12e2f49e5337745810fcb1)
+and [Etsy Code as Craft](https://github.com/oursqlcommunity-org/planet/commit/516d1369ad599be474fe428b546cb99a216536a1).
