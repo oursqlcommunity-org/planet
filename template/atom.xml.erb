@@ -13,7 +13,7 @@
   <subtitle>A blog aggregator for the MySQL Community / Ecosystem</subtitle>
 
 <%
-   items = site.items.latest.limit(100)
+   items = site.items.latest.limit(200)
    ItemCursor.new( items ).each do |item, new_date, new_feed|
 %>
   <entry>
