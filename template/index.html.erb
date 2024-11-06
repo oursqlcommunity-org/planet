@@ -98,7 +98,7 @@ Servers.</p>
 
 <div id="articles">
 <%
-   items = site.items.latest.limit(100)
+   items = site.items.latest.limit(200)
    ItemCursor.new( items ).each do |item, new_date, new_feed|
 %>
 
