@@ -1,42 +1,64 @@
 #!/bin/bash
 
-#
-# Example:
-#   ./pluto_fetch_n_merge.sh /home/admin/planet ./html ./log planet_mysql_community
-#
-
 # Unofficial Bash Strict Mode (Google it, it is worth the read).
 set -euo pipefail
 #IFS=$'\n\t'    # I - JFG - am not fully sure about this one yet...
 
+lock=/tmp/pluto_fetch_n_merge.lock
+
+pluto_dir=/home/mysql-planets/planet
+html_dir=./html
+template=planet_mysql_community
+log_dir=./fnm_logs
+
+mode="${1-}"
+
+if test "$mode" != "nolock"; then
+  if ! mkdir $lock > /dev/null 2>&1; then
+
+    test "$mode" != "wait" && echo "Locked: try again later." && exit 1
+
+    while sleep 1; do
+      mkdir $lock > /dev/null 2>&1 && break
+    done
+  fi
+fi
+
+trap "rm -rf $lock ; exit" INT TERM EXIT
+
 # Move in pluto directory.
-cd $1
+cd $pluto_dir
 
 # Test existance of output directory and move back in pluto directory.
-cd $2
-cd $1
+cd $html_dir
+cd $pluto_dir
 
 date_val="$(date +%F_%H-%M-%S)"
-log_file="$3/pluto_${date_val}.log"
-err_file="$3/pluto_${date_val}.err"
+log_file="$log_dir/pluto_${date_val}.log"
+err_file="$log_dir/pluto_${date_val}.err"
 
-# Test that we can create log file.
+# Test that we can create log files.
 touch $log_file
+touch $err_file
 
-# Actual work start here.
+# Run things, with logging.
+{ 
+  epoch_start="$(date +%s)"
 
-epoch_start="$(date +%s)"
+  echo "$(date) - running pluto update."
+  pluto update
+  echo
 
-echo "$(date) - running pluto update." >> $log_file 2>> $err_file
-pluto update >> $log_file 2>> $err_file
-echo >> $log_file 2>> $err_file
+  epoch_end="$(date +%s)"
+  echo "$(date) - update in $(($epoch_end - $epoch_start)) seconds."
+  echo
 
-echo "$(date) - running pluto merge." >> $log_file 2>> $err_file
-pluto merge -t $4 -o $2 >> $log_file 2>> $err_file
-echo >> $log_file 2>> $err_file
+  echo "$(date) - running pluto merge."
+  pluto merge -t $template -o $html_dir
+  echo
 
-epoch_end="$(date +%s)"
-
-echo "$(date) - done in $(($epoch_end - $epoch_start)) seconds." >> $log_file 2>> $err_file
+  epoch_end="$(date +%s)"
+  echo "$(date) - done in $(($epoch_end - $epoch_start)) seconds."
+} >> $log_file 2>> $err_file
 
 # EOF.
