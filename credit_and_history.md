@@ -22,11 +22,15 @@ to this repository can be found at the usual place on GitHub.
 ## Sysadmin help
 
 Maintaining a blog aggregator is not a lot of work, but it should not be on a single
-person.  In addition to Jean-François Gagné, the following people have commit access to
-the repository and are able to make change to the website:
+person.  In addition to Jean-François Gagné, the following people had commit access to
+the repository and were able to make change to the website:
 
 * [Ivan Groenewold](https://github.com/igroene)
 * [Simon J Mudd](https://github.com/sjmudd)
+
+Above is written at the past tense as these people are inactive for some time.
+Help is still needed, contact [Jean-François Gagné](https://linktr.ee/jfg.mysql)
+if you are willing to contribute and have sysadmin skills.
 
 ## AWS Open Source Credits
 
