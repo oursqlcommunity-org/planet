@@ -46,9 +46,10 @@ to the censorship of Planet MySQL.
 * [Planet MariaDB underwent liberal facelift](https://mariadb.org/planet-facelift/)
 * [Valerii Kravchuk](https://twitter.com/mysqlbugs) tweeted about [being filtered](https://twitter.com/mysqlbugs/status/1216683283662168064)
 * [Mark Callaghan](https://twitter.com/MarkCallaghanDB) tweeted about [pulling his blog from Planet MySQL](https://twitter.com/MarkCallaghanDB/status/1253699094343594019)
+* [State of Planet MySQL: unhealthy !](https://jfg-mysql.blogspot.com/2020/04/the-state-of-planet-mysql-unhealty.html)
 * [Planet MySQL Community: Requirements RFC](https://jfg-mysql.blogspot.com/2020/05/planet-mysql-community-requirements-rfc.html)
 * [Planet\[for the\] MySQL Community: Pluto Beta](https://jfg-mysql.blogspot.com/2020/05/planet-for-the-mysql-community-pluto-beta.html)
 * [Update on Planet for the MySQL Community (June 7, 2020)](https://jfg-mysql.blogspot.com/2020/06/update-on-planet-for-mysql-20200607.html)
 * [Planet for the MySQL Community Graduating from Beta](https://jfg-mysql.blogspot.com/2023/01/planet-for-mysql-community-graduation-from-beta.html)
 
-(Feel free to submit other relevant links via pull requests.)
+(Feel free to submit other relevant links via pull requests)
