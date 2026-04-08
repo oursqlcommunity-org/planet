@@ -28,6 +28,12 @@ the repository and are able to make change to the website:
 * [Ivan Groenewold](https://github.com/igroene)
 * [Simon J Mudd](https://github.com/sjmudd)
 
+## AWS Open Source Credits
+
+In April 2026, AWS Open Source allocated two years worth of hosting credits.
+[Thanks AWS Open Source](https://jfg-mysql.blogspot.com/2026/04/thanks-aws-open-source.html)
+for supporting Planet for the MySQL Community (and Planet for the Valkey Community).
+
 # History
 
 In addition to Shlomi Noach blog post
