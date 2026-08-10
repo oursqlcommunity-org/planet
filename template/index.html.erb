@@ -23,6 +23,7 @@
 
 <div id='navwrap'>
 <div id='nav'>
+
   <p><center><a href="https://github.com/oursqlcommunity-org/planet/blob/master/credit_and_history.md#aws-open-source-credits"><img src="https://d0.awsstatic.com/logos/powered-by-aws.png" alt="Powered by AWS"></a></center></p>
 
   <p><center><script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="planetMySQLComT" data-color="#FFDD00" data-emoji=""  data-font="Arial" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script></center></p>
@@ -64,12 +65,22 @@
   <ul class='subscriptions small' >
     <li><hr class='item-separator'></li>
     <!-- TODO: add separator between type of feeds (agg, aso, com, perso, ...). -->
-<% site.feeds.each do |feed| %>
+<%
+   site.feeds.each do |feed|
+      title = feed.title
+      filtered = feed.key.end_with?("_filtered")
+      if title.start_with?("_FI_ ")
+         title = title[5, title.length-5]
+         filtered = true
+      elsif title.start_with?("_NF_ ")
+         title = title[5, title.length-5]
+         filtered = false
+      end %>
     <li>
       <%= link_to '',  feed.feed_url, :class => "icon-rss-sign" %>
-      <%= link_to feed.title, feed.url %>
+      <%= link_to title, feed.url %>
       <%= link_to '', "https://twitter.com/#{feed.twitter}", :class => "icon-twitter" if feed.twitter %>
-      <%= link_to '', "https://github.com/oursqlcommunity-org/planet/blob/master/feed_filtering.md", :class => "icon-filter" if feed.key.end_with?("_filtered") %>
+      <%= link_to '', "https://github.com/oursqlcommunity-org/planet/blob/master/feed_filtering.md", :class => "icon-filter" if filtered %>
     </li>
 <% end %>
     <li><hr class='item-separator'></li>
@@ -85,7 +96,7 @@
 </div>
 
 <h1 style='margin: 0px 0px 0px 0px'><%= site.title %></h1>
-<h3 style='margin: 0px 0px 0px 0px'>A blog / news aggregator for the <%= link_to 'MySQL', "https://dev.mysql.com/community/"  %> Community / Ecosystem</h3>
+<h3 style='margin: 0px 0px 0px 0px'>A blog / news aggregator (Planet) for the <%= link_to 'MySQL', "https://dev.mysql.com/community/" %> Community / Ecosystem</h3>
 
 <p class='small'>And a clarification about the MySQL Community / Ecosystem:
 it is not limited the users of the MySQL Database.  In the current context,
@@ -98,35 +109,35 @@ Servers.</p>
 <%
    items = site.items.latest.limit(200)
    ItemCursor.new( items ).each do |item, new_date, new_feed|
-%>
-
+      title = item.feed.title
+      if title.start_with?("_FI_ ")
+         title = title[5, title.length-5]
+      elsif title.start_with?("_NF_ ")
+         title = title[5, title.length-5]
+      end %>
 <% if new_date %>
   <h2 class='new-date'><%= item.updated.strftime('%A, %d. %B %Y') %></h2>
 <% else %>
   <hr class='item-separator'>
 <% end %>
-
   <article class='item'>
-
     <h3 class='item-title'>
       <i class='icon-caret-down item-collapse item-close item-opened'></i>
       <i class='icon-caret-right item-expand item-open item-closed'></i>
       <%= link_to item.title, item.url %>
-      <sup><small>(from <%= link_to item.feed.title, item.feed.url %>)</small></sup>
+      <sup><small>(from <%= link_to title, item.feed.url %>)</small></sup>
     </h3>
-
     <div class='item-body'>
       <div class='item-snippet'>
 <% if item.summary # gsub below because textify does not always strip all html coding. %>
         <%= textify( item.summary ).gsub("<", "").gsub(">", "")[0..400] %>
 <% elsif item.content %>
         <%= textify( item.content ).gsub("<", "").gsub(">", "")[0..400] %>
-<%   else %>
+<% else %>
         -/-
 <% end %>
         [...]
       </div>
-
       <div class='item-footer'>
         Published <%= item.published.strftime('%A, %d. %B %Y %H:%M') %> &bull;
                   <%= time_ago_in_words( item.published ) %>
@@ -135,11 +146,10 @@ Servers.</p>
                 <%= time_ago_in_words( item.updated ) %>
 <% end %>
       </div>
-
     </div>
   </article>
 <% end %>
-
+<hr class='item-separator'>
 </div>
 </body>
 </html>

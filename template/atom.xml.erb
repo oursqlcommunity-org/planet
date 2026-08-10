@@ -10,12 +10,16 @@
   <link rel="self" href="<%= site.url %>atom.xml"/>
   <link href="<%= site.url %>"/>
   <generator uri="http://feedreader.github.io/"><%= Pluto.generator %></generator>
-  <subtitle>A blog aggregator for the MySQL Community / Ecosystem</subtitle>
-
+  <subtitle>A blog / news aggregator (Planet) for the MySQL Community / Ecosystem</subtitle>
 <%
    items = site.items.latest.limit(200)
    ItemCursor.new( items ).each do |item, new_date, new_feed|
-%>
+      title = item.feed.title
+      if title.start_with?("_FI_ ")
+         title = title[5, title.length-5]
+      elsif title.start_with?("_NF_ ")
+         title = title[5, title.length-5]
+      end %>
   <entry>
     <title type="html"><%= CGI.escapeHTML(item.title) %></title>
     <link href="<%= CGI.escapeHTML(item.url) %>"/>
@@ -27,10 +31,9 @@
       <%= CGI.escapeHTML( textify( item.content )[0..400] ) %>
     <% end %></content>
     <author>
-      <name><%= CGI.escapeHTML(item.feed.title) %></name>
+      <name><%= CGI.escapeHTML(title) %></name>
       <uri><%= CGI.escapeHTML(item.feed.url) %></uri>
     </author>
   </entry>
 <% end %>
-
 </feed>
