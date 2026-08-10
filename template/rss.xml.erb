@@ -12,16 +12,20 @@
 <channel>
   <title><%= site.title %></title>
   <link><%= site.url %></link>
-  <description>A blog aggregator for the MySQL Community / Ecosystem</description>
+  <description>A blog / news aggregator (Planet) for the MySQL Community / Ecosystem</description>
   <webMaster>planet@oursqlcommunity.org (Jean-Francois Gagne)</webMaster>
   <lastBuildDate><%= site.updated.rfc822 if site.updated %></lastBuildDate>
   <generator><%= Pluto.generator %> - http://feedreader.github.io/</generator>
   <atom:link href="<%= site.url %>atom.xml" rel="self" type="application/atom+xml" />
-
 <%
    items = site.items.latest.limit(200)
    ItemCursor.new( items ).each do |item, new_date, new_feed|
-%>
+      title = item.feed.title
+      if title.start_with?("_FI_ ")
+         title = title[5, title.length-5]
+      elsif title.start_with?("_NF_ ")
+         title = title[5, title.length-5]
+      end %>
 <item>
   <title><%= CGI.escapeHTML(item.title) %></title>
   <link><%= CGI.escapeHTML(item.url) %></link>
@@ -32,9 +36,8 @@
   <% end %></description>
   <guid><%= CGI.escapeHTML(item.url) %></guid>
   <pubDate><%= item.updated.rfc822 %></pubDate>
-  <dc:creator><%= CGI.escapeHTML(item.feed.title) %></dc:creator>
+  <dc:creator><%= CGI.escapeHTML(title) %></dc:creator>
 </item>
 <% end %>
-
 </channel>
 </rss>
