@@ -1,4 +1,4 @@
-# Blog Aggregator / Planet for the MySQL Community
+# Blog / News Aggregator (Planet) for the MySQL Community
 
 This repository contains the configuration required to generate the contents of
 [Planet for the MySQL Community](https://planet.oursqlcommunity.org/).
