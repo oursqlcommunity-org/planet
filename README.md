@@ -1,7 +1,8 @@
-# Blog / News Aggregator (Planet) for the MySQL Community
+# Planet for the MySQL Community
 
 This repository contains the configuration required to generate the contents of
-[Planet for the MySQL Community](https://planet.oursqlcommunity.org/).
+[Planet for the MySQL Community](https://planet.oursqlcommunity.org/),
+a blog / news aggregator (Planet) for the MySQL Community / Ecosystem.
 
 The current version of this file can be found in (1).
 
