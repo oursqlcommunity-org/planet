@@ -1,4 +1,4 @@
 # The first element of the path is the directory where the pluto binary is located
 PATH=/usr/local/bin:/usr/sbin:/usr/sbin:/usr/bin:/sbin:/bin
 
-0,20,40 * * * * mysql-planets /usr/bin/flock -n /home/mysql-planets/planet/run/cronlock /home/mysql-planets/planet/sh/pluto_fetch_n_merge.sh wait
+0,30 * * * * mysql-planets /usr/bin/flock -n /home/mysql-planets/planet/run/cronlock /home/mysql-planets/planet/sh/pluto_fetch_n_merge.sh wait
