@@ -11,6 +11,7 @@
   <link href="<%= site.url %>"/>
   <generator uri="http://feedreader.github.io/"><%= Pluto.generator %></generator>
   <subtitle>A blog / news aggregator (Planet) for the MySQL Community / Ecosystem</subtitle>
+  <author><name><%= site.title %></name><email>planet@oursqlcommunity.org</email></author>
 <%
    items = site.items.latest.limit(200)
    ItemCursor.new( items ).each do |item, new_date, new_feed|
