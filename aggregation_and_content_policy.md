@@ -1,3 +1,6 @@
+
+<!-- 6789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 -->
+
 # Aggregation and Content Policy
 
 If there is a problem with content on Planet for the MySQL Community, please
@@ -19,22 +22,20 @@ The configuration file containing currently aggregated feeds is
 [planet.ini](https://github.com/oursqlcommunity-org/planet/blob/master/planet.ini).
 
 
-## Author Availability Policy
+<!-- 6789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 -->
 
-Authors whose blogs are aggregated on Planet for the MySQL Community should be
-available for public discussions about the content they provide.  For that,
-they should provide a Twitter handle (or another way by which they can be
-contacted).
+## Abuse Procedure
 
-In case of a matter that should be managed privately, authors are also asked to
-provide an email address (or another way to be privately contacted by the
-maintainers of Planet for the MySQL Community).  If they choose not to do this,
-communication which would have been private will be public, which is less than
-ideal.  Email addresses are not shared publicly.  A confidential way to
-communicate an email address in an issue or a pull request is described in the
-[Email Encryption How-to](https://github.com/oursqlcommunity-org/planet/blob/master/email_encryption_howto.md).
-Another way is to send an email at planet AT oursqlcommunity DOT org.
+If there is a problem with content on Planet for the MySQL Community, please try
+solving it directly with the author (in the subscription list, there should be a
+link about how to contact them, or there is probably a way to comment on the
+problematic post).  If this fails, or if it is a kind of problem that cannot
+be solved with a discussion, open an
+[Issue](https://github.com/oursqlcommunity-org/planet/issues)
+or send an email to planet AT oursqlcommunity DOT org.
 
+
+<!-- 6789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 -->
 
 ## Relevant Feeds
 
@@ -98,3 +99,6 @@ email.
 
 (Policy inspired by the one of the
 [OpenStreetMap feed aggregator](https://github.com/gravitystorm/blogs.osm.org/blob/700ff57d4b6fb8b821f5baee2799f4eeaacb95cc/FEEDS.md).)
+
+
+<!-- EOF -->
