@@ -107,7 +107,7 @@ Servers.</p>
 
 <div id="articles">
 <%
-   items = site.items.latest.limit(200)
+   items = site.items.latest.limit(300)
    ItemCursor.new( items ).each do |item, new_date, new_feed|
       title = item.feed.title
       if title.start_with?("_FI_ ")
