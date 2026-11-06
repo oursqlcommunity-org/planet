@@ -15,9 +15,6 @@
 
   <%= stylesheet_link_tag 'css/font-awesome' %>
   <%= stylesheet_link_tag 'css/blank' %>
-
-  <script src='js/jquery-2.0.3.min.js'></script>
-  <script src='js/blank.js'></script>
 </head>
 <body>
 
@@ -88,13 +85,6 @@
 </div>
 </div>
 
-<div id='opts'>
-  <div style='width: 100%; text-align: right;'>
-   <img src='image/view-headlines.png' id='show-headlines' title='Show Headlines Only' width='24' height='24'>
-   <img src='image/view-snippets.png'  id='show-snippets'  title='Show Snippets'       width='24' height='24'>
-  </div>
-</div>
-
 <h1 style='margin: 0px 0px 0px 0px'><%= site.title %></h1>
 <h3 style='margin: 0px 0px 0px 0px'>A blog / news aggregator (Planet) for the <%= link_to 'MySQL', "https://dev.mysql.com/community/" %> Community / Ecosystem</h3>
 
@@ -122,8 +112,6 @@ Servers.</p>
 <% end %>
   <article class='item'>
     <h3 class='item-title'>
-      <i class='icon-caret-down item-collapse item-close item-opened'></i>
-      <i class='icon-caret-right item-expand item-open item-closed'></i>
       <%= link_to item.title, item.url %>
       <sup><small>(from <%= link_to title, item.feed.url %>)</small></sup>
     </h3>
